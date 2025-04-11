@@ -1,7 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+
 import DashboardScreen from './screens/DashboardScreen';
+import EventDetailsScreen from './screens/EventDetailsScreen'; // ✅ NEW
 import EventFormScreen from './screens/EventFormScreen';
 import FavoritesScreen from './screens/FavoritesScreen';
 import SignInScreen from './screens/SignInScreen';
@@ -18,6 +20,11 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={DashboardScreen} />
         <Stack.Screen name="EventForm" component={EventFormScreen} />
         <Stack.Screen name="Favorites" component={FavoritesScreen} />
+        <Stack.Screen
+          name="EventDetails"
+          component={EventDetailsScreen}
+          options={{ title: 'Event Details' }} // ✅ Optional screen title
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
